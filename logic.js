@@ -9,8 +9,15 @@ function init() {
         }
       ];
       
-      Plotly.newPlot('chart', trace);
+      Plotly.plot('chart', trace);
 
 }
+
+function load_recommendation() {
+
+    
+}
+
+
 
 init();

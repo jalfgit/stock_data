@@ -9,15 +9,29 @@ function init() {
         }
       ];
       
-      Plotly.plot('chart', trace);
+      Plotly.newPlot('chart', trace);
 
 }
 
 function load_recommendation() {
 
+    var table = d3.select("#tablerec");
+    ratings.forEach((rating) => {
+      var row = table.append("tr");
+      
+      //  start another loop for columns in array
+      Object.values(rating).forEach((v) =>
+
+      {
+        let td = row.append("td");
+        // row.append("td").text(v)  
+        td.text(v);
+
+      }
+      )
+    });
     
 }
-
 
 
 init();

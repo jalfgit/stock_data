@@ -28,6 +28,7 @@ function init() {
 
 
       load_recommendation();
+      load_pie();
 
 }
 

@@ -10,28 +10,45 @@ function init() {
       ];
       
       Plotly.newPlot('chart', trace);
+      load_recommendation();
 
 }
 
 function load_recommendation() {
 
     var table = d3.select("#tablerec");
-    ratings.forEach((rating) => {
-      var row = table.append("tr");
-      
-      //  start another loop for columns in array
-      Object.values(rating).forEach((v) =>
 
+    ratings.firm.forEach((v,i) =>
       {
+        console.log(i,v,ratings.grade[i]);
+        var row = table.append("tr");
         let td = row.append("td");
-        // row.append("td").text(v)  
+        // row.append("td").text(v);
         td.text(v);
 
+        td = row.append("td");
+        // row.append("td").text(ratings.grade[i]);
+        td.text(ratings.grade[i]);
+
       }
-      )
-    });
-    
+    );
+};
+
+
+function load_pie() {
+  var trace = [
+    {
+      labels: ratings.grade,
+      values: ratings.rating_id,
+      type: 'pie'
+    }
+  ];
+  
+  Plotly.newPlot('pie', trace);
+
 }
 
 
+
 init();
+

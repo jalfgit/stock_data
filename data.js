@@ -1,15 +1,15 @@
 var ratings = {
-    firm:null,
-    grade:null
+    firm:[],
+    grade:[]
 };
 
 var stock_hist ={
-    dates:null,
-    open:null,
-    high:null,
-    low:null,
-    close:null,
-    dow:null
+    dates:[],
+    open:[],
+    high:[],
+    low:[],
+    close:[],
+    dow:[]
 };
 
 d3.json("stock.json").then(function(d) {

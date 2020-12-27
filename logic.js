@@ -10,6 +10,23 @@ function init() {
       ];
       
       Plotly.newPlot('chart', trace);
+
+      var candle = [
+        {
+          x: stock_hist.dates,
+          close: stock_hist.close,
+          high: stock_hist.high,
+          low: stock_hist.low,
+          open: stock_hist.open,
+          type: 'candlestick',
+          name: 'Stock Data'
+        }
+      ];
+      
+      Plotly.newPlot('candle', candle);
+
+
+
       load_recommendation();
 
 }
@@ -47,8 +64,6 @@ function load_pie() {
   Plotly.newPlot('pie', trace);
 
 }
-
-
 
 init();
 

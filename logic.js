@@ -68,3 +68,10 @@ function load_pie() {
 
 init();
 
+
+d3.select("#two").data(sales).enter().append("li").text((d) => d*2); INCORRECT
+
+d3.select("#two").selectAll("li").data(sales).enter().append("li").text((d) => d*2); CORRECT
+
+
+
